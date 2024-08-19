@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
+import Header from './Components/header/Header';
+import TopContainer from './Components/TopContainer/TopContainer';
 
 function App() {
+  const [location, setLocation] = useState('');
+
+  const handleLocationChange = (newLocation) => {
+    setLocation(newLocation);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header onLocationChange={handleLocationChange}/>
+      <TopContainer location={location}/>
+  
     </div>
   );
 }

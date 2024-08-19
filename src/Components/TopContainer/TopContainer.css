@@ -1,0 +1,9 @@
+.topcontainer{
+    background-image: url(https://www-cdn.eumetsat.int/files/styles/16_9_large/s3/2020-06/ASpot_Weather.jpg?h=d1cb525d&itok=lvYWh_W8);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.5);
+
+}
