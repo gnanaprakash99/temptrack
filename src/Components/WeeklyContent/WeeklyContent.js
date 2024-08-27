@@ -57,7 +57,7 @@ const WeeklyContent = ({ location }) => {
                 </div>
               ))
             ) : (
-              <p>Loading weekly data...</p>
+              <p>No data found...</p>
             )}
           </div>
         </div>
