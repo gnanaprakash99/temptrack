@@ -41,7 +41,7 @@ const HourlyContent = ({ location }) => {
                                 </div>
                             ))
                         ) : (
-                            <p>Loading hourly data...</p>
+                            <p>No data found...</p>
                         )}
                     </div>
                 </div>
