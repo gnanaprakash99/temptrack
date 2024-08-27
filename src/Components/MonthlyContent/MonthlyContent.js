@@ -59,7 +59,7 @@ const MonthlyContent = ({ location }) => {
               </div>
             ))
           ) : (
-            <p>Loading monthly data...</p>
+            <p>No data found...</p>
           )}
         </div>
       </Element>
