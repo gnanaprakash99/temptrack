@@ -24,6 +24,9 @@ const Header = ({ onLocationChange }) => {
                 <Link to='today' smooth={true} duration={500}>
                     <h4>Today </h4>
                 </Link>
+                <Link to='hourly' smooth={true} duration={500}>
+                    <h4>Hourly </h4>
+                </Link>
                 <Link to='weekly' smooth={true} duration={500}>
                     <h4>Weekly </h4>
                 </Link>
