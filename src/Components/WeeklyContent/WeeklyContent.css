@@ -1,0 +1,26 @@
+.weeklyContent {
+    background-color: black; 
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .weeklyWeather {
+    display: flex;
+    overflow-x: auto; 
+    padding: 10px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  .day {
+    background-color:rgb(52, 50, 50);
+    padding: 15px;
+    margin: 5px;
+    border-radius: 8px;
+    width: 170px; 
+    text-align: center;
+    font-size: 14px;
+    flex: 0 0 auto;
+  }
+  
