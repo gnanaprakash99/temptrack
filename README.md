@@ -4,6 +4,8 @@ A React application that provides weather information including hourly, weekly, 
 
 ## Features
 
-- Input location to get weather data
-- View hourly, weekly, and monthly forecasts
-- Responsive design
+- **Location-based weather search:** Enter any location to get weather data.
+- **Hourly Forecast:** View the weather forecast for the next 12 hours.
+- **Weekly Forecast:** Get an overview of the weather for the upcoming week.
+- **Monthly Forecast:** See weather trends for the current month.
+- **Responsive Design:** Optimized for various devices and screen sizes
