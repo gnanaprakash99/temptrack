@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './TopContent.css';
+import axios from 'axios'
 
 
 const TopContent = ({ location }) => {
@@ -9,11 +10,11 @@ const TopContent = ({ location }) => {
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const response = await fetch(
+        const response = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`
         );
 
-        const data = await response.json();
+        const data = response.data
 
         setWeather(`${data.main.temp} °C`);
       } catch (error) {
