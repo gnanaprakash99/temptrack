@@ -19,6 +19,7 @@ span{
     display: flex;
     flex: .4;
     justify-content:space-around;
+    align-items: center;
     text-align: center;
     padding: 18px;
 }
