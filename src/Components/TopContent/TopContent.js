@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './TopContent.css';
 import axios from 'axios'
+import TopGlobeRotating from '../TopGlobeRotating/TopGlobeRotating';
 
 
 const TopContent = ({ location }) => {
@@ -31,7 +32,7 @@ const TopContent = ({ location }) => {
   return (
     <div className='topcontent'>
       <div className='topcontent_left'>
-        
+        <TopGlobeRotating />
       </div>
       <div className='topcontent_right'>
         <h1>Today's Weather in </h1>
