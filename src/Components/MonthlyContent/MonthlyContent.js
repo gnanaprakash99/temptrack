@@ -17,21 +17,31 @@ const MonthlyContent = ({ location }) => {
         const groupedByMonth = data.list.reduce((acc, entry) => {
           const date = new Date(entry.dt_txt);
           const monthYear = `${date.getMonth() + 1}-${date.getFullYear()}`;
-          
+
           if (!acc[monthYear]) {
             acc[monthYear] = { temp: 0, count: 0, description: entry.weather[0].description };
           }
           acc[monthYear].temp += entry.main.temp;
           acc[monthYear].count += 1;
-          acc[monthYear].description = entry.weather[0].description; 
+          acc[monthYear].description = entry.weather[0].description;
           return acc;
         }, {});
 
-        const monthlyData = Object.keys(groupedByMonth).map(monthYear => ({
-          monthYear,
-          temp: (groupedByMonth[monthYear].temp / groupedByMonth[monthYear].count).toFixed(1),
-          description: groupedByMonth[monthYear].description,
-        }));
+        const now = new Date();
+        const currentMonthYear = `${now.getMonth() + 1}-${now.getFullYear()}`;
+        const nextMonthYear = getNextMonth(now);
+
+        const monthlyData = [
+          { monthYear: currentMonthYear, temp: 0, description: '' },
+          { monthYear: nextMonthYear, temp: 0, description: '' }
+        ];
+
+        monthlyData.forEach(month => {
+          if (groupedByMonth[month.monthYear]) {
+            month.temp = (groupedByMonth[month.monthYear].temp / groupedByMonth[month.monthYear].count).toFixed(1);
+            month.description = groupedByMonth[month.monthYear].description;
+          }
+        });
 
         setMonthlyWeather(monthlyData);
       } catch (error) {
@@ -45,22 +55,30 @@ const MonthlyContent = ({ location }) => {
     }
   }, [location]);
 
+  const getNextMonth = (date) => {
+    const nextDate = new Date(date);
+    nextDate.setMonth(date.getMonth() + 1);
+    return `${nextDate.getMonth() + 1}-${nextDate.getFullYear()}`;
+  };
+
   return (
     <div>
       <Element name='monthly' className='monthlyContent'>
         <h1>Monthly Weather in {location}</h1>
-        <div className='monthlyWeather'>
-          {monthlyWeather.length > 0 ? (
-            monthlyWeather.map((month, index) => (
-              <div key={index} className='month'>
-                <p>{month.monthYear}</p>
-                <p>{month.temp} °C</p>
-                <p>{month.description}</p>
-              </div>
-            ))
-          ) : (
-            <p>Select your location...</p>
-          )}
+        <div className='monthlyWeatherWrapper'>
+          <div className='monthlyWeather'>
+            {monthlyWeather.length > 0 ? (
+              monthlyWeather.map((month, index) => (
+                <div key={index} className='month'>
+                  <p>{month.monthYear}</p>
+                  <p>{month.temp} °C</p>
+                  <p>{month.description}</p>
+                </div>
+              ))
+            ) : (
+              <p>Select your location...</p>
+            )}
+          </div>
         </div>
       </Element>
     </div>

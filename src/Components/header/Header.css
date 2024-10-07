@@ -23,13 +23,21 @@ span{
     text-align: center;
     padding: 18px;
 }
-.header_right>a>h4{
+.options{
+    display: flex;
+    flex: .4;
+    justify-content:space-around;
+    align-items: center;
+    text-align: center;
+    padding: 18px;
+}
+.options>a>h4{
     cursor: pointer;
     transition: 200ms;
     margin: 0 15px;
     
 }
-.header_right>a>h4:hover{
+.options>a>h4:hover{
     transform: scale(1.09);
     background-color: orangered;
     padding: 5px 20px;
@@ -50,3 +58,14 @@ button{
     cursor: pointer;
     border-radius: 5px;
 }
+
+@media (max-width:576px){
+    .options{
+        display: none;
+    }
+    .input-container{
+        padding: 0%;
+    }
+}
+
+

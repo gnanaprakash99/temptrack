@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 import { Link } from 'react-scroll'
 
@@ -21,18 +21,20 @@ const Header = ({ onLocationChange }) => {
                 <h1>Weath<span>er</span></h1>
             </div>
             <div className='header_right'>
-                <Link to='today' smooth={true} duration={500}>
-                    <h4>Today </h4>
-                </Link>
-                <Link to='hourly' smooth={true} duration={500}>
-                    <h4>Hourly </h4>
-                </Link>
-                <Link to='weekly' smooth={true} duration={500}>
-                    <h4>Weekly </h4>
-                </Link>
-                <Link to='monthly' smooth={true} duration={500}>
-                    <h4>Monthly</h4>
-                </Link>
+                <div className='options'>
+                    <Link to='today' smooth={true} duration={500}>
+                        <h4>Today </h4>
+                    </Link>
+                    <Link to='hourly' smooth={true} duration={500}>
+                        <h4>Hourly </h4>
+                    </Link>
+                    <Link to='weekly' smooth={true} duration={500}>
+                        <h4>Weekly </h4>
+                    </Link>
+                    <Link to='monthly' smooth={true} duration={500}>
+                        <h4>Monthly</h4>
+                    </Link>
+                </div>
                 <div className='input-container'>
                     <i className='fas fa-map-marker-alt'></i>
                     <input
@@ -41,7 +43,7 @@ const Header = ({ onLocationChange }) => {
                         onChange={handleInputChange}
                         placeholder='Enter location'
                     />
-                     <button onClick={handleButtonClick}>Get Weather</button>
+                    <button onClick={handleButtonClick}>Get Weather</button>
                 </div>
             </div>
         </div>

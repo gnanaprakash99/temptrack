@@ -1,26 +1,88 @@
 .weeklyContent {
-    background-color: black; 
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
-  
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.weeklyWeatherWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weeklyWeather {
+  display: flex;
+  align-items: center; 
+  overflow: hidden;
+}
+
+.weeklyWeatherCards {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+  justify-content: center; 
+  gap: 10px; 
+}
+
+.day {
+  background-color: rgb(52, 50, 50);
+  padding: 15px;
+  margin: 5px;
+  border-radius: 8px;
+  width: 170px; 
+  text-align: center;
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+
+.scroll-arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 2;
+  position: absolute; 
+}
+
+.left {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right {
+  right: 10px; 
+  top: 50%; 
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1200px) {
   .weeklyWeather {
-    display: flex;
-    overflow-x: auto; 
-    padding: 10px;
-    margin-top: 20px;
-    justify-content: center;
+      max-width: calc(200px * 5.5 + 15px * 4); 
   }
-  
-  .day {
-    background-color:rgb(52, 50, 50);
-    padding: 15px;
-    margin: 5px;
-    border-radius: 8px;
-    width: 170px; 
-    text-align: center;
-    font-size: 14px;
-    flex: 0 0 auto;
+}
+
+@media (max-width: 992px) {
+  .weeklyWeather {
+      max-width: calc(200px * 4.5 + 15px * 3); 
   }
-  
+}
+
+@media (max-width: 768px) {
+  .weeklyWeather {
+      max-width: calc(200px * 3.5 + 15px * 2); 
+  }
+}
+
+@media (max-width: 576px) {
+  .weeklyWeather {
+      max-width: calc(200px * 2.5 + 18px * 1); 
+  }
+}
+

@@ -1,9 +1,8 @@
-
 .hourlyContent {
     background-color: black;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+    padding: 20px;
 }
 
 .hourlyContent h1 {
@@ -13,16 +12,22 @@
     letter-spacing: 1px;
     font-size: 3em;
     padding-bottom: 1em;
+}
 
+.scroll-container {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .hourlyContent_weather {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     padding-bottom: 30px;
-
+    gap: 15px;
+    justify-content: flex-start;
 }
 
 .hour {
@@ -31,11 +36,60 @@
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    flex: 1 1 calc(25% - 15px);
-    max-width: calc(25% - 15px);
+    flex: 0 0 150px; 
 }
-
 .hour p {
     margin: 5px 0;
     font-size: 0.9rem;
 }
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.scroll-arrow.left {
+    left: 10px;
+}
+
+.scroll-arrow.right {
+    right: 10px;
+}
+
+.scroll-arrow:hover {
+    background-color: orangered;
+}
+
+@media (max-width: 1200px) {
+    .hourlyContent_weather {
+        max-width: calc(200px * 6 + 15px * 4);
+    }
+}
+
+@media (max-width: 992px) {
+    .hourlyContent_weather {
+        max-width: calc(200px * 5 + 15px * 3); 
+    }
+}
+
+@media (max-width: 768px) {
+    .hourlyContent_weather {
+        max-width: calc(200px * 4 + 15px * 2); 
+    }
+}
+
+@media (max-width: 576px) {
+    .hourlyContent_weather {
+        max-width: calc(200px * 2.5 + 15px * 1); 
+    }
+}
+
+

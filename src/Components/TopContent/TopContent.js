@@ -35,7 +35,7 @@ const TopContent = ({ location }) => {
         <TopGlobeRotating />
       </div>
       <div className='topcontent_right'>
-        <h1>Today's Weather in </h1>
+        <h1> {location ? "Today's Weather in" : 'Select  location...'}</h1>
         <h1>{location}</h1>
         <h1 className='weatherValue'>{weather}</h1>
       </div>
