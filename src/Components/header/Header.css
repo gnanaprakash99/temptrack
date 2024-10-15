@@ -13,7 +13,10 @@ span{
     color: orangered;
 }
 .header_left{
+    display: flex;
     flex: .6;
+    align-items: center;
+    justify-content: center;
 }
 .header_right{
     display: flex;
