@@ -18,6 +18,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .hourlyContent_weather {
@@ -36,8 +37,10 @@
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    flex: 0 0 150px; 
+    flex: 0 0 150px;
+
 }
+
 .hour p {
     margin: 5px 0;
     font-size: 0.9rem;
@@ -68,6 +71,13 @@
     background-color: orangered;
 }
 
+.hour:hover {
+    transform: scale(1.05);
+    letter-spacing: 1px;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
 @media (max-width: 1200px) {
     .hourlyContent_weather {
         max-width: calc(200px * 6 + 15px * 4);
@@ -76,20 +86,18 @@
 
 @media (max-width: 992px) {
     .hourlyContent_weather {
-        max-width: calc(200px * 5 + 15px * 3); 
+        max-width: calc(200px * 5 + 15px * 3);
     }
 }
 
 @media (max-width: 768px) {
     .hourlyContent_weather {
-        max-width: calc(200px * 4 + 15px * 2); 
+        max-width: calc(200px * 4 + 15px * 2);
     }
 }
 
 @media (max-width: 576px) {
     .hourlyContent_weather {
-        max-width: calc(200px * 2.5 + 15px * 1); 
+        max-width: calc(200px * 2.5 + 15px * 1);
     }
 }
-
-

@@ -2,40 +2,52 @@
   background-color: black;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
 
-.weeklyWeatherWrapper {
+.weeklyContent h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 3em;
+  padding-bottom: 1em;
+}
+
+.scroll-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.weeklyWeather {
-  display: flex;
-  align-items: center; 
   overflow: hidden;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .weeklyWeatherCards {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
+  gap: 15px;
   padding: 10px;
-  justify-content: center; 
-  gap: 10px; 
 }
 
 .day {
   background-color: rgb(52, 50, 50);
-  padding: 15px;
-  margin: 5px;
   border-radius: 8px;
-  width: 170px; 
+  width: 170px;
   text-align: center;
-  font-size: 14px;
-  flex: 0 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+
+
+.day p {
+  margin: 5px 0;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .scroll-arrow {
@@ -45,44 +57,53 @@
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 2;
-  position: absolute; 
 }
 
 .left {
   left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .right {
-  right: 10px; 
-  top: 50%; 
-  transform: translateY(-50%);
+  right: 10px;
 }
 
+.scroll-arrow:hover {
+  background-color: orangered;
+}
+
+.day:hover {
+  transform: scale(1.05);
+  letter-spacing: 1px;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+
 @media (max-width: 1200px) {
-  .weeklyWeather {
-      max-width: calc(200px * 5.5 + 15px * 4); 
+  .weeklyWeatherCards {
+    max-width: calc(170px * 5 + 15px * 4);
   }
 }
 
 @media (max-width: 992px) {
-  .weeklyWeather {
-      max-width: calc(200px * 4.5 + 15px * 3); 
+  .weeklyWeatherCards {
+    max-width: calc(170px * 4 + 15px * 3);
   }
 }
 
 @media (max-width: 768px) {
-  .weeklyWeather {
-      max-width: calc(200px * 3.5 + 15px * 2); 
+  .weeklyWeatherCards {
+    max-width: calc(170px * 3 + 15px * 2);
   }
 }
 
 @media (max-width: 576px) {
-  .weeklyWeather {
-      max-width: calc(200px * 2.5 + 18px * 1); 
+  .weeklyWeatherCards {
+    max-width: calc(170px * 2 + 15px * 1);
   }
 }
-
