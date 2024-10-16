@@ -65,20 +65,18 @@ const MonthlyContent = ({ location }) => {
     <div>
       <Element name='monthly' className='monthlyContent'>
         <h1>Monthly Weather in {location}</h1>
-        <div className='monthlyWeatherWrapper'>
-          <div className='monthlyWeather'>
-            {monthlyWeather.length > 0 ? (
-              monthlyWeather.map((month, index) => (
-                <div key={index} className='month'>
-                  <p>{month.monthYear}</p>
-                  <p>{month.temp} °C</p>
-                  <p>{month.description}</p>
-                </div>
-              ))
-            ) : (
-              <p>Select your location...</p>
-            )}
-          </div>
+        <div className='monthlyContent_weather'>
+          {monthlyWeather.length > 0 ? (
+            monthlyWeather.map((month, index) => (
+              <div key={index} className='month'>
+                <p>{month.monthYear}</p>
+                <p>{month.temp} °C</p>
+                <p>{month.description}</p>
+              </div>
+            ))
+          ) : (
+            <p>Select your location...</p>
+          )}
         </div>
       </Element>
     </div>

@@ -9,15 +9,18 @@
     position: sticky;
     z-index: 2000;
 }
+
 span{
     color: orangered;
 }
+
 .header_left{
     display: flex;
     flex: .6;
     align-items: center;
     justify-content: center;
 }
+
 .header_right{
     display: flex;
     flex: .4;
@@ -26,6 +29,7 @@ span{
     text-align: center;
     padding: 18px;
 }
+
 .options{
     display: flex;
     flex: .4;
@@ -34,18 +38,21 @@ span{
     text-align: center;
     padding: 18px;
 }
+
 .options>a>h4{
     cursor: pointer;
     transition: 200ms;
     margin: 0 15px;
     
 }
+
 .options>a>h4:hover{
     transform: scale(1.09);
     background-color: orangered;
     padding: 5px 20px;
     border-radius: 1em;
 }
+
 .header_right input {
     padding: 5px;
     border-radius: 5px;
@@ -53,9 +60,11 @@ span{
     margin-left: 20px;
     font-size: 1rem;
 }
+
 .input-container input::placeholder {
     color: #999;
 }
+
 button{
     margin: 0 15px;
     cursor: pointer;

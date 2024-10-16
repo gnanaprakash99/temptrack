@@ -64,27 +64,27 @@ const WeeklyContent = ({ location }) => {
       <Element name='weekly' className='weeklyContent'>
         <div>
           <h1>Weekly Weather in {location}</h1>
-            <div className='scroll-container' >
-              {dailyWeather.length > 0 ? (
-                <>
+          <div className='scroll-container' >
+            {dailyWeather.length > 0 ? (
+              <>
 
-                  <div className='weeklyWeatherCards' ref={scrollRef}>
-                    {dailyWeather.map((day, index) => (
-                      <div key={index} className='day'>
-                        <p>{new Date(day.date).toLocaleDateString()}</p>
-                        <p>{day.temp} °C</p>
-                        <p>{day.description}</p>
-                      </div>
-                    ))}
-                  </div>
+                <div className='weeklyContent_weather' ref={scrollRef}>
+                  {dailyWeather.map((day, index) => (
+                    <div key={index} className='day'>
+                      <p>{new Date(day.date).toLocaleDateString()}</p>
+                      <p>{day.temp} °C</p>
+                      <p>{day.description}</p>
+                    </div>
+                  ))}
+                </div>
 
-                  <button className='scroll-arrow left' onClick={scrollLeft}>⬅</button>
-                  <button className='scroll-arrow right' onClick={scrollRight}>➡</button>
-                </>
-              ) : (
-                <p>Select your location...</p>
-              )}
-            </div>
+                <button className='scroll-arrow left' onClick={scrollLeft}>⬅</button>
+                <button className='scroll-arrow right' onClick={scrollRight}>➡</button>
+              </>
+            ) : (
+              <p>Select your location...</p>
+            )}
+          </div>
         </div>
       </Element>
     </div>

@@ -24,7 +24,7 @@
   margin-top: 20px;
 }
 
-.weeklyWeatherCards {
+.weeklyContent_weather {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
