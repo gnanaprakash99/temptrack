@@ -85,25 +85,25 @@
 
 
 @media (max-width: 1200px) {
-  .weeklyWeatherCards {
+  .weeklyContent_weather {
     max-width: calc(170px * 5 + 15px * 4);
   }
 }
 
 @media (max-width: 992px) {
-  .weeklyWeatherCards {
+  .weeklyContent_weather {
     max-width: calc(170px * 4 + 15px * 3);
   }
 }
 
 @media (max-width: 768px) {
-  .weeklyWeatherCards {
+  .weeklyContent_weather {
     max-width: calc(170px * 3 + 15px * 2);
   }
 }
 
 @media (max-width: 576px) {
-  .weeklyWeatherCards {
+  .weeklyContent_weather {
     max-width: calc(170px * 2 + 15px * 1);
   }
 }
