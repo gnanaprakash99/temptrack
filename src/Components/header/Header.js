@@ -18,7 +18,7 @@ const Header = ({ onLocationChange }) => {
     return (
         <div className='header'>
             <div className='header_left'>
-                <h1>Weath<span>er</span></h1>
+                <h1>TEMP<span>TRACK</span></h1>
             </div>
             <div className='header_right'>
                 <div className='options'>
